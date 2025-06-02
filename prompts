@@ -1,0 +1,6 @@
+tôi muốn bạn xây dựng giúp tôi 1 hệ thống website hiển thị thông tin thống kê của dự án các xe điện Vinfast tôi đang thực hiện
+Tôi sẽ import các file report excel mẫu: gồm 2-3 sheet, tên các sheet và các cột ở mỗi sheet sẽ được cố định. BE sẽ thực hiện xử lý dữ liệu bao gồm các việc sau:
+Kiểm tra sheet name, define header là dòng 1, sau đó sẽ xử lý dữ liệu của file excel thành từng hàng tương ứng với các header. sau đó, sẽ thực hiện save vào database (mySQL).
+Việc lưu vào CSDL sẽ được thực hiện đồng thời với việc trực quan hoá dữ liệu thông qua FE và gói dữ liệu BE đã đóng gói hoàn chỉnh. FE sẽ bao gồm biểu đồ thống kê, bảng thống kê chi tiết, và 1 bảng overall.
+Website này sẽ yêu cầu về FE dễ dàng sử dụng và trực quan, BE bao gồm việc xử lý logic các data cần thiết cụ thể ( theo ảnh ) dựa trên data mẫu được import từ file excel. CSDL sử dụng mySQL.
+Các ngôn ngữ sử dụng hãy sử dụng ở phiên bản mới nhất hiện nay(BE là node + express, FE là jsx,css,html ), và hãy hướng dẫn tôi chi tiết từ các bước đơn giản nhất từ lúc cài đặt cho tới lúc khởi chạy được

@@ -127,7 +127,7 @@ const Charts = () => {
                         <Typography variant="h6" gutterBottom>
                             Phân phối trạng thái
                         </Typography>
-                        <div style={{ height: '400px' }}>
+                        <div style={{ height: '400px', width: '600px' }}>
                             <Pie
                                 data={pieData}
                                 options={{

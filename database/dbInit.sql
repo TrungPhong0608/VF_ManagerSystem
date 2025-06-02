@@ -1,6 +1,6 @@
-CREATE DATABASE webapp;
+CREATE DATABASE VFsystem;
 
-USE webapp;
+USE VFsystem;
 
 -- Create IssueList table
 DROP TABLE IF EXISTS IssueList;
@@ -23,8 +23,9 @@ CREATE TABLE IssueList (
     issueNo VARCHAR(10),
     note VARCHAR(500),
     km VARCHAR(10),
+	created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
-);
+) AUTO_INCREMENT = 1;
 
 -- Create StatisticalData table
 DROP TABLE IF EXISTS StatisticalData;
@@ -39,5 +40,26 @@ CREATE TABLE StatisticalData (
     occurence VARCHAR(20),
     issueDescription VARCHAR(500),
     assessment VARCHAR(20),
+	created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
-);
+) AUTO_INCREMENT = 1;
+
+DROP TABLE IF EXISTS vehicle_stats;
+CREATE TABLE vehicle_stats(
+	id INT(10) NOT NULL AUTO_INCREMENT,
+    function_name VARCHAR(50),
+    da_check INT,
+    no_issue INT,
+    issue INT,
+    kpi_issue INT,
+    cant_check INT,
+    limitation INT,
+    vehicle_issue INT,
+    no_data INT,
+    data_error INT,
+    total_events INT,
+    total_bugs_found INT,
+    created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+) AUTO_INCREMENT = 1;
+    

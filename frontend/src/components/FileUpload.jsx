@@ -27,19 +27,30 @@ const FileUpload = ({ onUploadSuccess }) => {
             const response = await axios.post('http://localhost:5000/api/upload/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
-                }
+                },
+                timeout: 30000
             });
 
-            setMessage('Upload thành công!');
+            setMessage('Upload thành công! ${response.data.rowCount} dòng đã được xử lý');
             if (onUploadSuccess) {
-                onUploadSuccess();
+                onUploadSuccess(response.data);
             }
         } catch (error) {
-            setMessage(`Lỗi khi upload: ${error.response?.data?.error || error.message}`);
-        } finally {
-            setUploading(false);
-        }
-    };
+            let errorMsg = 'Lỗi khi upload'
+            if (error.response) {
+                errorMsg += `: ${error.response.data.error || error.response.data.message}`;
+                if (error.response.data.details) {
+                    errorMsg += ` (Chi tiết: ${JSON.stringify(error.response.data.details)})`;
+                }
+            } else {
+                    errorMsg += `: ${error.message}`;
+                }
+                setMessage(errorMsg);
+        } finally
+            {
+                setUploading(false);
+            }
+        };
 
     return (
         <div style={{ margin: '20px 0', padding: '20px', border: '1px dashed #ccc', borderRadius: '4px' }}>
